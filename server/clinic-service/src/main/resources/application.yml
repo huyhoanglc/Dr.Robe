@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: clinic-service
+
+  data:
+    mongodb:
+      host: mongodb
+      port: 27017
+      database: dr_robe_clinic
+
+  kafka:
+    bootstrap-servers: kafka:29092
+    consumer:
+      group-id: clinic-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true

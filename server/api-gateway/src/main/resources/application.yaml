@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: auth-service
+            uri: lb://auth-service
+            predicates:
+              - Path=/auth/**
+          - id: trading-service
+            uri: lb://trading-service
+            predicates:
+              - Path=/trading/**
+          - id: shop-service
+            uri: lb://shop-service
+            predicates:
+              - Path=/shop/**
+          - id: clinic-service
+            uri: lb://clinic-service
+            predicates:
+              - Path=/clinic/**
+          - id: hotel-service
+            uri: lb://hotel-service
+            predicates:
+              - Path=/hotel/**
+          - id: spa-service
+            uri: lb://spa-service
+            predicates:
+              - Path=/spa/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka

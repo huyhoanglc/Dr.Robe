@@ -1,0 +1,19 @@
+# Java build
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Environment 
+.env
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# Crash logs
+hs_err_pid*
+replay_pid*
+
+# Docker
+docker-compose.override.yml

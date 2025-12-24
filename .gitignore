@@ -1,0 +1,16 @@
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.swp
+*.DS_Store
+
+# Log files
+*.log
+logs/
+
+# Node 
+node_modules/
+
+# OS rác
+Thumbs.db
